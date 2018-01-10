@@ -1,0 +1,75 @@
+<!-- 
+Jina notes: 
+I put script at end of html
+I added searchBtn id
+I connected javascript tag generator with articles tag
+
+what else needs to be done:
+1. every search field needs to be filled in order for this to work; javascript needs to further consider missing value cases (if statements)
+2. formatting of this html document: artciles get populated but don't look as nice as you guys had expected
+3. clear result is not implemented in javascript
+4. would be nice to further this search to have articles showing up to include URL, so user can click through
+
+I had so much fun working with you all <3
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container clearfix">
+            <h1 id="logo">New York Times Search</h1>
+        </div>
+    </header>
+    <div class="row contentBox">
+        <div class="panel panel-default panelCustom">
+            <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <strong>Search Paramaters</strong></div>
+            <div class="panel-body">
+                <form action="/action_page.php">    
+                    <div class="form-group">
+                        <label for="searchTerm">Search Term:</label>
+                        <input type="text" class="form-control" id="searchTerm">
+                    </div>
+                    <div class="form-group">
+                        <label for="numberPages">Number of Pages Returned:</label>
+                        <select class="form-control" id="numberPages">
+                            <option>1</option>
+                            <option>5</option>
+                            <option>10</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startYear">Start Year (optional):</label>
+                        <input type="text" class="form-control" id="startYear">
+                    </div>
+                    <div class="form-group">
+                        <label for="endYear">End Year (optional):</label>
+                        <input type="text" class="form-control" id="endYear">
+                    </div>
+                    <button type="search" class="btn btn-default" id = "searchBtn">Search</button>
+                    <button id="clear" class="btn btn-default">Clear Results</button>
+                </form></div>
+            </div>
+            <div class="row panelArticle">
+                <div class="panel panel-default panelArticle">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <strong>Top Articles</strong></div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body panelArticleBody" id="articles">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script type='text/javascript' src='javascript.js'></script>
+    </body>
+</html>
